@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_authentication_google/controller/authentication_controller.dart';
+import 'package:getx_authentication_google/controller/home_controller.dart';
 import 'package:getx_authentication_google/models/user_model.dart';
 
-class HomeView extends GetView<AuthenticationController> {
+class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    UserModel userModel = Get.arguments;
+    UserModel userModel = controller.userModel;
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
@@ -29,7 +30,9 @@ class HomeView extends GetView<AuthenticationController> {
           ),
           ElevatedButton(
               onPressed: () async {
-                await controller.logoutGoogle();
+                AuthenticationController authenticationController =
+                    Get.find<AuthenticationController>();
+                await authenticationController.logoutGoogle();
               },
               child: Text('Logout'))
         ],
