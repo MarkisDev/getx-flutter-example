@@ -3,7 +3,7 @@
  Hey folks! 
  This app was built as a demo to my article on how to integrate Firebase authentication with GetX in flutter.
  
- You can read the article here!
+ You can read the article [here!](https://rijuth.hashnode.dev/google-sign-in-with-getx)
  
  # How to contact 
  
